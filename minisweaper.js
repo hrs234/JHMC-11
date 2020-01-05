@@ -3,11 +3,15 @@ let miniswep = data => {
   let temp = 0;
   let count = 0;
   for (let a = 0; a <= getCode.length - 1; a++) {
-    if (getCode[a] == temp) {
+    if (getCode[a] == 0 || temp == 2) {
       temp = 0;
-    } else if (getCode[a] != temp) {
-      temp = getCode[a];
-      count++;
+    } else {
+      if (getCode[a] == temp) {
+        temp = 0;
+      } else if (getCode[a] != temp) {
+        temp = getCode[a];
+        count++;
+      }
     }
   }
   return count;
