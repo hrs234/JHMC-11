@@ -1,9 +1,14 @@
 let miniswep = data => {
   let getCode = data.split(" ");
-  let temp = null;
+  let temp = 0;
   let count = 0;
   for (let a = 0; a <= getCode.length - 1; a++) {
-    // TODO: check conditioning...
+    if (getCode[a] == temp) {
+      temp = 0;
+    } else if (getCode[a] != temp) {
+      temp = getCode[a];
+      count++;
+    }
   }
   return count;
 };
